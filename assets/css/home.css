@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: grey;
+    overflow-x: hidden;
+    background-color: lightyellow;
+}
+input, select {
+    background-color: lightyellow;
+}
+p {
+    margin: 0.5rem 2rem;
+    font-weight: 700;
+}
+input:focus {
+    outline: 0;
+}
+/* Page Heading */
+#page-heading {
+    text-align: center;
+    margin-top: 25px;
+}
+/* Description */
+#description {
+    width: 100%;
+    height: 70px;
+    border: 1px solid gray;
+    border-right: none;
+    overflow: hidden;
+}
+#description:active {
+    background: lightgray;
+}
+#description:active #task-name-id{
+    background: lightgray;
+}
+#description input {
+    border: none;
+    width: 90vw;
+    height: 30%;
+    margin-left: 2rem;
+}
+#description input:active {
+    background: lightgray;
+}
+::placeholder {
+    opacity: 0.8;
+}
+/* Category */
+#category-container {
+    display: flex;
+    flex-direction: row;
+}
+#category {
+    border-bottom: 1px solid gray;
+}
+#sel-cata {
+    width: 47vw;
+    border: 0;
+    margin: 0rem 2rem 1rem 2rem;
+}
+#sel-cata:focus {
+    outline: 0;
+}
+/* Due Date */
+#due-date input {
+    border: 0;
+    width: 45vw;
+    margin-left: 2rem;
+}
+#due-date {
+    width: 50vw;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+}
+/* Common for both Add and Delete Task */
+button {
+    height: 60px;
+    width: 200px;
+    margin: 3rem 0.5rem 1rem 2rem;
+    font-weight: 900;
+    font-size: larger;
+}
+button i {
+    margin: 1rem;
+    margin-left: 0;
+}
+/* Button: Add task */
+#add-task {
+    color: white;
+    background-color: rgb(36, 35, 35);
+    margin-left: 35rem;
+}
+#add-task:hover {
+    background-color: black;
+}
+/* Button: Delete Task */
+.del-task {
+    color: white;
+    background-color: red;
+}
+.del-task:hover {
+    background-color: darkred;
+}
+/* Style for Task list */
+li {
+    list-style: none;
+}
+.task-name-container {
+    display: flex;
+    flex-direction: row;
+}
+.task-name-container input {
+    width: 1.2rem;
+}
+input[type="radio"]:checked + h2 {
+    text-decoration: line-through;
+}
+.task-name-container h2 {
+    margin: 0.5em 1em;
+}
+.category-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.due-date-to {
+    padding: 0px 14px;
+}
+.category-name {
+    margin-right: 2em;
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 0px 2px 4px 2px;
+    width: 130px;
+}
+.categ-type {
+    text-transform: capitalize;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <!-- Page Heading -->
+    <h1 id="page-heading">TODO APP</h1>
+    <!-- Form for adding task -->
+    <form action="/create-task" method="post">
+        <!-- Task Description -->
+        <div id="description">
+            <p>DESCRIPTION</p>
+            <input type="text" name="task" id="task-name-id" placeholder="What do you need to do?">
+        </div>
+        <!-- Task Category Type -->
+        <div id="category-container">
+            <div id="category">
+                <p>CATEGORY</p>
+                <select name="category" id="sel-cata" required>
+                    <option value="choose">Choose a category</option>
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <!-- Task Due Date -->
+            <div id="due-date">
+                <p>Due Date</p>
+                <input type="date" id="dt" name="dueDate"/>
+            </div>
+        </div>
+        <!-- Add And Delete Task Buttons -->
+        <button id="add-task" onclick="submitFun()"><i class="fas fa-plus"></i>ADD TASK</button>
+        <a href="/delete-task/?id=0" id="del-id">
+            <button type="button" class="del-task"><i class="fas fa-trash-alt"></i>DELETE TASK</button>
+        </a>
+    </form>
+    <!-- Task List which are pending -->
+    <div id="tasks-list-container">
+        <ul>
+            <% for( let i of task_list ) { %>
+                <li>
+                    <!-- Task Name -->
+                    <div class="task-container">
+                        <div class="task-name-container">
+                            <input type="radio" name="task-box" id="<%= i._id %>" onclick="ClickedID(this.id)">
+                            <h2><%= i.task_name %></h2>
+                        </div>
+                        <!-- Task category and due date -->
+                        <div class="category-container">
+                            <p class="due-date-to"><i class="fas fa-calendar-alt"></i> <%= i.due_date %></p>
+                            <div class="category-name">
+                                <p class="categ-type"><%= i.category %> </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+            <% } %>
+        </ul>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
